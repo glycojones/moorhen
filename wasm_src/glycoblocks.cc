@@ -596,11 +596,18 @@ std::vector<Cartesian> DrawSugarBlockInt(mmdb::Residue* res1, int selHnd, mmdb::
     //std::cout << "Possibly drawing " << res->GetResName() << std::endl;
     std::vector<Cartesian> retval;
 
-    const auto blue_col = glm::vec4(0,0.56,0.73,1);
-    const auto green_col = glm::vec4(0,0.65,0.31,1);
-    const auto yellow_col = glm::vec4(0.8,0.63,0,1);
-    const auto red_col = glm::vec4(0.92,0.1,0.14,1);
-    const auto orange_col = glm::vec4(1,0.49,0,1);
+    // RGB values taken from https://www.ncbi.nlm.nih.gov/glycans/snfg1_5.html#tab2
+    // and divided by 255 so they go from 0 to 1
+    const auto white_col = glm::vec4(1, 1, 1, 1); 
+    const auto blue_col = glm::vec4(0, 0.45, 0.74, 1);
+    const auto green_col = glm::vec4(0, 0.65, 0.31, 1);
+    const auto yellow_col = glm::vec4(0.8, 0.63, 0, 1);
+    const auto lightblue_col = glm::vec4(0.56, 0.8, 0.91, 1);
+    const auto pink_col = glm::vec4(0.96, 0.62, 0.63, 1);
+    const auto purple_col = glm::vec4(0.65, 0.26, 0.6, 1);
+    const auto brown_col = glm::vec4(0.63, 0.48, 0.30, 1);
+    const auto orange_col = glm::vec4(1, 0.49, 0, 1);
+    const auto red_col = glm::vec4(0.92, 0.1, 0.14, 1);
 
     // Should not be able to get here with these not already registered.
     int udd_C1X = molHnd->GetUDDHandle ( UDR_RESIDUE,"GLYCO_BLOCK_C1X" );
